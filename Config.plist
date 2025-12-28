@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>IP Info</string>
+
+  <key>icon</key>
+  <string>iconify:eos-icons:ip</string>
+
+  <key>actions</key>
+  <array>
+    <dict>
+      <key>title</key>
+      <string>IP Info</string>
+
+      <key>shell script file</key>
+      <string>script.sh</string>
+
+      <key>regex</key>
+      <string>(?:(?:[0-9]{1,3}\.){3}[0-9]{1,3}|(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|(?:[0-9a-fA-F]{1,4}:){1,7}:|(?:[0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|(?:[0-9a-fA-F]{1,4}:){1,5}(?::[0-9a-fA-F]{1,4}){1,2}|(?:[0-9a-fA-F]{1,4}:){1,4}(?::[0-9a-fA-F]{1,4}){1,3}|(?:[0-9a-fA-F]{1,4}:){1,3}(?::[0-9a-fA-F]{1,4}){1,4}|(?:[0-9a-fA-F]{1,4}:){1,2}(?::[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:(?::[0-9a-fA-F]{1,4}){1,6}|:(?:(?::[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(?::[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(?:ffff(?::0{1,4}){0,1}:){0,1}(?:(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3}(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])|(?:[0-9a-fA-F]{1,4}:){1,4}:(?:(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3}(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9]))</string>
+    </dict>
+  </array>
+
+  <key>options</key>
+  <array>
+    <dict>
+      <key>identifier</key>
+      <string>show_ptr</string>
+      <key>type</key>
+      <string>boolean</string>
+      <key>label</key>
+      <string>PTRレコードを表示</string>
+      <key>default value</key>
+      <true/>
+    </dict>
+    <dict>
+      <key>identifier</key>
+      <string>show_org</string>
+      <key>type</key>
+      <string>boolean</string>
+      <key>label</key>
+      <string>組織名を表示</string>
+      <key>default value</key>
+      <true/>
+    </dict>
+    <dict>
+      <key>identifier</key>
+      <string>show_country</string>
+      <key>type</key>
+      <string>boolean</string>
+      <key>label</key>
+      <string>国を表示</string>
+      <key>default value</key>
+      <true/>
+    </dict>
+    <dict>
+      <key>identifier</key>
+      <string>show_asn</string>
+      <key>type</key>
+      <string>boolean</string>
+      <key>label</key>
+      <string>ASN（自律システム番号）を表示</string>
+      <key>default value</key>
+      <true/>
+    </dict>
+    <dict>
+      <key>identifier</key>
+      <string>show_abuse</string>
+      <key>type</key>
+      <string>boolean</string>
+      <key>label</key>
+      <string>Abuse連絡先を表示</string>
+      <key>default value</key>
+      <true/>
+    </dict>
+    <dict>
+      <key>identifier</key>
+      <string>show_descr</string>
+      <key>type</key>
+      <string>boolean</string>
+      <key>label</key>
+      <string>説明/ネットワーク名の詳細を表示</string>
+      <key>default value</key>
+      <false/>
+    </dict>
+    <dict>
+      <key>identifier</key>
+      <string>show_netrange</string>
+      <key>type</key>
+      <string>boolean</string>
+      <key>label</key>
+      <string>IPレンジ/CIDRを表示</string>
+      <key>default value</key>
+      <false/>
+    </dict>
+    <dict>
+      <key>identifier</key>
+      <string>copy_to_clipboard</string>
+      <key>type</key>
+      <string>boolean</string>
+      <key>label</key>
+      <string>クリップボードにコピー</string>
+      <key>default value</key>
+      <true/>
+    </dict>
+    <dict>
+      <key>identifier</key>
+      <string>show_dialog</string>
+      <key>type</key>
+      <string>boolean</string>
+      <key>label</key>
+      <string>ダイアログで確認</string>
+      <key>default value</key>
+      <true/>
+    </dict>
+  </array>
+</dict>
+</plist>
