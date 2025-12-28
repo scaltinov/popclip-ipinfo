@@ -111,10 +111,6 @@ if [ "$SHOW_DIALOG" = "1" ]; then
   # Show dialog with results
   osascript -e "display dialog \"$OUTPUT$COPIED_MSG\" buttons {\"OK\"} default button 1 with title \"IP Info\""
 else
-  # Show success message in PopClip tooltip
-  if [ "$COPY_CLIPBOARD" = "1" ]; then
-    echo "✓ IP情報をコピーしました"
-  else
-    echo "✓ IP情報を取得しました"
-  fi
+  # Show IP info in PopClip tooltip
+  echo -e "$OUTPUT"
 fi
