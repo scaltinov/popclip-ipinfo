@@ -99,18 +99,20 @@ if [ "$SHOW_NETRANGE" = "1" ]; then
   [ -n "$NETRANGE" ] && OUTPUT+="\nNetRange: $NETRANGE"
 fi
 
-# Copy to clipboard (if enabled)
-COPIED_MSG=""
-if [ "$COPY_CLIPBOARD" = "1" ]; then
-  echo -e "$OUTPUT" | pbcopy
-  COPIED_MSG="\n\n✓ クリップボードにコピー済み"
+# Copy results to clipboard if enabled
+if [ "$COPY_CLIPBOARD" = "1" ] && [ -n "$OUTPUT" ]; then
+  printf "%s" "$OUTPUT" | pbcopy
 fi
 
-# Display results
-if [ "$SHOW_DIALOG" = "1" ]; then
-  # Show dialog with results
-  osascript -e "display dialog \"$OUTPUT$COPIED_MSG\" buttons {\"OK\"} default button 1 with title \"IP Info\""
-else
-  # Show IP info in PopClip tooltip
-  echo -e "$OUTPUT"
+# Display results either via dialog or PopClip's standard output
+if [ -n "$OUTPUT" ]; then
+  if [ "$SHOW_DIALOG" = "1" ]; then
+    osascript <<'OSA' "$OUTPUT"
+on run argv
+  display dialog item 1 of argv buttons {"OK"} default button "OK" with title "IP Info"
+end run
+OSA
+  else
+    echo -e "$OUTPUT"
+  fi
 fi
